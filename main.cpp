@@ -89,7 +89,6 @@ int main(int argc, char *argv[])
 		for (int i = 0; i < chunk; ++i) {
 			a[i].real() = (double) rand_r(&seed)/RAND_MAX;
 			a[i].imag() = (double) rand_r(&seed)/RAND_MAX;
-			// a[i] = 1.0;
 			local_sum += norm(a[i]);
 		}
 		MPI_Allreduce(&local_sum,&S,1,MPI_DOUBLE,MPI_SUM,MPI_COMM_WORLD);
